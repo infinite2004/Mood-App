@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<script>
+
+</script>
+    <title>Document</title>
+
+</head>
+<body>  
+  
+      <form action = "/login" method = "post">
+
+        <p>Enter mood </p>
+        <p><input type = "text" name = "r" /></p>
+
+        <label for="date"></label>
+	        <input type="date" name="date" id="date">
+	        <br>
+            
+            <p><input type = "submit" value = "submit" /></p>
+        </form>  
+
+        <input type="radio" name="options" id="option1" value="option1"> Sad </input><br>
+<input type="radio" name="options" id="option2" value="option2"> Happy </input><br>
+<input type="radio" name="options" id="option3" value="option3"> Mad </input><br>
+
+
+
+      
+
+      {% if not messages %}
+      <p>No Reminders Set</p>
+      {% endif %}
+
+      {% if messages %}
+        {% for message in messages%}
+
+        <div class = "row">
+          <div class = "col-md">
+            <p>{{message['reminder']}}</p>
+          </div>
+          <div class = "col-md">
+            <p>{{message['time']}}</p>
+          </div>
+          <div class = "col-md">
+            <a href="/buttonPressed/{{message['id']}}/{{message['reminder']}}"><button>Finish</button></a>
+          </div>
+        </div>
+
+        {%endfor%}
+
+      {% endif %}
+      <br>
+      <br>
+      <br>
+
+      <a href="/deleteAll"><button>Delete All</button></a>
+
+
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>    
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+ 
+</body>
+</html>
