@@ -17,6 +17,14 @@ app = Flask(__name__)
 @app.route('/main')
 def home():
    return render_template('main.html')
+@app.route('/GetTips')
+def tips():
+   return render_template('allmoods.html')
+@app.route('/showmood')
+def show():
+   
+   return render_template('pimoods.html')
+
 @app.route('/login',methods = ['POST', 'GET'])
 def login():
    if request.method == 'POST':
