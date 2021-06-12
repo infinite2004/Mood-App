@@ -39,6 +39,10 @@ def overwhelmed():
 @app.route('/fear')
 def fear():
       return render_template('fear.html')
+@app.route('/submitmenow')
+def submitmenow():
+      return render_template('all.html')
+
 @app.route('/login',methods = ['POST', 'GET'])
 def login():
    if request.method == 'POST':
