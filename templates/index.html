@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="index.css">
 <script>
 
 </script>
@@ -14,57 +13,91 @@
 
     
 </head>
-<body>  
+<style>
+
+body{
+  background-image:url("/static/index.jpg");
+  
+  margin-left: 50px;
+}
+
+label{
+  font-size: x-large;
+}
+.p2{
+  font-family:cursive;
+  font-style: italic;
+  align-self: center;
+  margin-bottom: 0.1%;
+  margin-top: 0.1%;
+  font-size: x-large;
+
+}
+.result{
+  padding-top:100px;
+}
+.p1{
+  font-family:cursive;
+  font-style: italic;
+  font-size: large;
+}
+</style>
+ 
+<body>
+  <h1>RECORD YOUR MOOD</h1>
+  <div class="form">
   
       <form action = "/login" method = "post">
 
-        <p>How are you feeling today</p>
-        <p><input type = "text" name = "r" /></p>
+        <p class="p2">How are you feeling today</p>
+        <p class="p2"><input type = "text" name = "r" /></p>
 
-        <label for="date">Pick a date</label>
-	        <input type="date" name="date" id="date">
+        <p class="p2"><label for="date">Pick a date</label></p>
+	        <p class="p2"><input type="date" name="date" id="date"></p>
 	        <br>
 	        
-	      <label for="time">Hour</label>
-	        <input type="time" id="time" name="time">
+	      <p class="p2"><label for="time">Hour</label></p>
+	        <p class="p2"><input type="time" id="time" name="time"></p>
 	        <br>
             
            
             
-            <p><input type = "submit" value = "submit" /></p>
+            <p class="p2"><input type = "submit" value = "submit" /></p>
         </form>  
-
-
+      </div>
       
-      <h1>Moods</h1>
+      
+      <div class="result">
+        <h1>Mood journal</h1>
 
-      {% if not messages %}
-      <p>No Reminders Set</p>
-      {% endif %}
-
-      {% if messages %}
-        {% for message in messages%}
-
-        <div class = "row">
-          <div class = "col-md">
-            <p>{{message['reminder']}}</p>
+        {% if not messages %}
+        <p class="p1">No Reminders Set</p>
+        {% endif %}
+  
+        {% if messages %}
+          {% for message in messages%}
+  
+          <div class = "row">
+            <div class = "col-md">
+              <p class="p1">{{message['reminder']}}</p>
+            </div>
+            <div class = "col-md">
+              <p class="p1">{{message['time']}}</p>
+            </div>
+            <div class = "col-md">
+              <a href="/buttonPressed/{{message['id']}}/{{message['reminder']}}"><button>Finish</button></a>
+            </div>
           </div>
-          <div class = "col-md">
-            <p>{{message['time']}}</p>
-          </div>
-          <div class = "col-md">
-            <a href="/buttonPressed/{{message['id']}}/{{message['reminder']}}"><button>Finish</button></a>
-          </div>
-        </div>
-
-        {%endfor%}
-
-      {% endif %}
-      <br>
-      <br>
-      <br>
-
-      <a href="/deleteAll"><button>Delete All</button></a>
+  
+          {%endfor%}
+  
+        {% endif %}
+        <br>
+        <br>
+        <br>
+  
+        <a href="/deleteAll"><button>Delete All</button></a>
+      </div>
 
 
 
