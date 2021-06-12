@@ -22,8 +22,11 @@ def tips():
    return render_template('allmoods.html')
 @app.route('/showmood')
 def show():
-   
    return render_template('pimoods.html')
+
+@app.route('/sad')
+def sad():
+      return render_template('sad.html')
 
 @app.route('/login',methods = ['POST', 'GET'])
 def login():

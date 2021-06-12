@@ -21,7 +21,8 @@
 .quodrant1,
 .quodrant2,
 .quodrant3,
-.quodrant4{
+.quodrant4,
+.quadrant5{
     display: inline;
     float: left;
     width: 46%;
@@ -45,7 +46,9 @@
 .quodrant4{ 
     background-color: #7cf5f9;
 }
-
+.quadrant5{
+    background-color:#25f036; 
+}
 #container{
     left:100px
 }
@@ -89,18 +92,25 @@
     
 </div>
     <p style="font-size:48px">
-      &#128545;
+      
       <div class='quodrant'>
         
         <div class ="container">
             <p style= "position: absolute; left: 5%; top: 50%;"id="description">Emotion1</p>
-        
+            <a class="link" href="http://127.0.0.1:5000/sad">sad</a> <!--this is the href link it is functional but it needs to be positioned pla do that-->
+
         <div class ="container">
              <p style= "position: absolute; left: 5%; top: 100%;"id="SAD">Emotion2</p>
-        
+
+            
+        <div class ="container">
+                <p style= "position: absolute; left: 55%; top:50%;"id="Angry">Emotion3</p>
+               
+         <div class ="container">
+                    <p style= "position: absolute; left: 55%; top: 100%;"id="Tired">Emotion4</p>
             <div class='qtop'>
             
-            <div class='quodrant1'><p style="font-size:40px">&#128516;</div>
+            <div class='quodrant1'><p style="font-size:40px">&#128516;</a></p></div>
             
             
             <div class='quodrant2'><p style="font-size:40px">&#128557;</div>
@@ -113,6 +123,13 @@
             <div class='quodrant4'><p style="font-size:40px">&#128565;</div>
         </div>
     </div>
+
+    <div class='qbottom'>
+        <div class='quodrant3'><p style="font-size:40px">&#128545;</div>
+
+        
+    </div>
+</div>
     
     <script type="text/javascript" src="main.js"></script>
     </body>
