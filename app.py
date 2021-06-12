@@ -27,7 +27,15 @@ def show():
 @app.route('/sad')
 def sad():
       return render_template('sad.html')
-
+@app.route('/happy')
+def happy():
+      return render_template('happy.html')
+@app.route('/angry')
+def angry():
+      return render_template('angry.html')
+@app.route('/overwhelmed')
+def overwhelmed():
+      return render_template('overwhelmed.html')
 @app.route('/login',methods = ['POST', 'GET'])
 def login():
    if request.method == 'POST':

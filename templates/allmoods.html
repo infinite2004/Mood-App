@@ -52,6 +52,9 @@
 #container{
     left:100px
 }
+body{
+    background-color: antiquewhite;
+}
 
 
     </style>
@@ -71,7 +74,7 @@
             } );
         }, 1800 );
 
-        var SAD  = [ "continue to be happy", "always smile", "nice smile", "continue being awsome", "" ];
+        var SAD  = [ "better days will come", "dont give up", "keep your head up", "continue being awsome", "look to the future" ];
         var index = 0;
         $("#SAD").fadeTo( 1, 0 );
         setInterval( function(){
@@ -83,10 +86,36 @@
                 };
             } );
         }, 1800 );
+
+        var OVERWHELMED= [ "take your time", "write down how you feel", "take a break", "relax", "You got this" ];
+        var index = 0;
+        $("#OVERWHELMED").fadeTo( 1,0 );
+        setInterval( function(){
+            $( "#OVERWHELMED" ).stop().html(OVERWHELMED[ index ]).fadeTo( 500, 1, function(){
+                index++;
+                $("#OVERWHELMED").delay( 1000 ).fadeTo( 500, 0 );
+                if(index == 10 ) {
+                    index = 0;
+                };
+            } );
+        }, 1800 );
+
+        var ANGRY= [ "take a breather", "think about the situation", "talk it out", "explain your frustration to another person", "count to 10" ];
+        var index = 0;
+        $("#ANGRY").fadeTo( 1,0 );
+        setInterval( function(){
+            $( "#ANGRY" ).stop().html(ANGRY[ index ]).fadeTo( 500, 1, function(){
+                index++;
+                $("#ANGRY").delay( 1000 ).fadeTo( 500, 0 );
+                if(index == 10 ) {
+                    index = 0;
+                };
+            } );
+        }, 1800 );
     </script>
 </head>    
 <body>
-    <h1>How are you feeling today?</h1>
+    <h1>If you are feeling:</h1>
     <script src="{{url_for('static', filename='main.js')}}">sefh</script>
    <link rel = "stylesheet" type="text/css" href ="{{url_for('static',filename ='main.css')}}
     
@@ -96,27 +125,22 @@
       <div class='quodrant'>
         
         <div class ="container">
-            <p style= "position: absolute; left: 5%; top: 50%;"id="description">Emotion1</p>
-<<<<<<< HEAD
-            <a class="link" href="http://127.0.0.1:5000/sad">sad</a> <!--this is the href link it is functional but it needs to be positioned pla do that-->
+            <p style= "position: absolute; left: 5%; top: 50%;"id="description">Emotion1></p>
+            <!--this is the href link it is functional but it needs to be positioned pla do that-->
+            <a class="link" style = "position: absolute; left: 20%; top: 50%;"href="http://127.0.0.1:5000/happy">Click me</a> 
 
         <div class ="container">
              <p style= "position: absolute; left: 5%; top: 100%;"id="SAD">Emotion2</p>
+            <a class="link" style = "position: absolute; left: 20%; top: 100%;"href="http://127.0.0.1:5000/sad">Click me</a> 
+        
+            <div class ="container">
+                <p style= "position: absolute; left: 55%; top:50%;"id="OVERWHELMED">Emotion3</p>
+                <a class="link" style = "position: absolute; left: 65%; top: 50%;"href="http://127.0.0.1:5000/overwhelmed">Click me</a> 
 
-            
-        <div class ="container">
-                <p style= "position: absolute; left: 55%; top:50%;"id="Angry">Emotion3</p>
-               
          <div class ="container">
                     <p style= "position: absolute; left: 55%; top: 100%;"id="Tired">Emotion4</p>
-            <div class='qtop'>
-            
-            <div class='quodrant1'><p style="font-size:40px">&#128516;</a></p></div>
-=======
-                        
-        <div class ="container">
-             <p style= "position: absolute; left: 5%; top: 100%;"id="SAD" <a href="sad.html"></a>>Emotion2</p>
-             
+
+        
         
             <div class='qtop'>
             
@@ -124,7 +148,6 @@
             <a href="happy.html"></a>
             
             </div>
->>>>>>> e9e9765bd88ad7c2e5ad625f9aa56a41acd871c2
             
             
             <div class='quodrant2'><p style="font-size:40px">&#128557;</div>
@@ -141,6 +164,9 @@
 
     <div class='qbottom'>
         <div class='quodrant3'><p style="font-size:40px">&#128545;</div>
+            <p style= "position: absolute; left: 5%; top: 150%;"id="ANGRY">Emotion5</p>
+
+            <a class="link" style = "position: absolute; left: 20%; top: 150%;"href="http://127.0.0.1:5000/angry">Click me</a> 
 
         
     </div>
