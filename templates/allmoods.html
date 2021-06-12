@@ -47,7 +47,7 @@
     background-color: #7cf5f9;
 }
 .quadrant5{
-    background-color:#25f036; 
+    background-color:#f8b90b; 
 }
 #container{
     left:100px
@@ -112,6 +112,19 @@ body{
                 };
             } );
         }, 1800 );
+
+        var FEAR= [ "believe in yourself", "think about the situation", "find confidence", "dont be afraid of anything", "take the chance" ];
+        var index = 0;
+        $("#FEAR").fadeTo( 1,0 );
+        setInterval( function(){
+            $( "#FEAR" ).stop().html(FEAR[ index ]).fadeTo( 500, 1, function(){
+                index++;
+                $("#FEAR").delay( 1000 ).fadeTo( 500, 0 );
+                if(index == 10 ) {
+                    index = 0;
+                };
+            } );
+        }, 1800 );
     </script>
 </head>    
 <body>
@@ -138,7 +151,8 @@ body{
                 <a class="link" style = "position: absolute; left: 65%; top: 50%;"href="http://127.0.0.1:5000/overwhelmed">Click me</a> 
 
          <div class ="container">
-                    <p style= "position: absolute; left: 55%; top: 100%;"id="Tired">Emotion4</p>
+                    <p style= "position: absolute; left: 55%; top: 100%;"id="FEAR">Emotion4</p>
+                    <a class="link" style = "position: absolute; left: 65%; top: 100%;"href="http://127.0.0.1:5000/fear">Click me</a> 
 
         
         

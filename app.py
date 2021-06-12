@@ -36,6 +36,9 @@ def angry():
 @app.route('/overwhelmed')
 def overwhelmed():
       return render_template('overwhelmed.html')
+@app.route('/fear')
+def fear():
+      return render_template('fear.html')
 @app.route('/login',methods = ['POST', 'GET'])
 def login():
    if request.method == 'POST':
